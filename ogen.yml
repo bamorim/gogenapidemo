@@ -1,0 +1,4 @@
+generator:
+  content_type_aliases:
+    application/problem+json: "application/json"
+    application/merge-patch+json: "application/json"

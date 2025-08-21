@@ -1,0 +1,14 @@
+[tools]
+go = "1.25"
+node = { version = "24.6.0", postinstall = "cd apispec && npm install" }
+
+[tasks.serve]
+run = "go run cmd/server/server.go"
+
+[tasks."generate:apispec"]
+run = "npm run compile"
+dir = "apispec"
+
+[tasks.generate]
+run = "go generate ./..."
+depends = ["generate:apispec"]
