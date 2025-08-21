@@ -6,6 +6,8 @@ A demo project showcasing the integration between [TypeSpec](https://typespec.io
 - Generate OpenAPI specifications automatically
 - Generate Go server code using ogen's highly optimized, reflection-free implementation
 
+The demo includes a simple Widget service implementation showcasing CRUD operations and custom analysis endpoints.
+
 ## Dependencies
 
 This project uses [mise](https://mise.jdx.dev/) for managing tool versions. You'll need:
@@ -22,8 +24,10 @@ This project uses [mise](https://mise.jdx.dev/) for managing tool versions. You'
 
 3. Run the server:
    ```bash
-   mise run serve
+   mise run server
    ```
+
+4. Access the API documentation at [http://localhost:8080/docs/](http://localhost:8080/docs/)
 
 ## Development
 
@@ -32,6 +36,11 @@ When making changes to the API specification in `apispec/`, you'll need to regen
 ```bash
 mise run generate
 ```
+
+This will:
+1. Generate OpenAPI JSON spec from TypeSpec
+2. Copy the spec to the service directory
+3. Generate Go code using ogen
 
 ## Project Structure
 
